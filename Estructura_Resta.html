@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Resta</title>
+	<link rel="stylesheet" href="Estilos/estilosGeneral.css">
+</head>
+<body>
+	<div class="contenedor">
+		<div class="contenedor-lista">
+			<h1>Resta</h1>
+
+			<div class="lista" id="lista">
+
+        <script>
+          var min = 1;
+          var max = 20;
+          var resp1;
+          var resp2;
+          var res_resta;
+          for(var i=0; i<10; i ++){
+            resp1 = Math.floor(Math.random()*(max - min +1)) + min;
+            resp2 = Math.floor(Math.random()*(max - min +1)) + min;
+            if(resp1 < resp2){
+              res_resta = resp2 - resp1;
+              document.write(i+1+".-   "+resp2 +"-"+ resp1 + "=" +res_resta+"</br>");
+            }else{
+              res_resta = resp1 - resp2;
+              document.write(i+1+".-   "+resp1 +"-"+ resp2 + "=" +res_resta+"</br>");
+            }
+          }
+           </script>
+        <div class="txtSuma">
+          <input type = "text" id=respSuma </input>
+        </div>
+        <div class="calificar">
+          <br><a href="#">Calificar</a>
+        </div>
+				<div>
+          <br><a href="file:///D:/Documents/UTPL/Inform%C3%A1tica%20-%20Daniel/9%20Abril%202020%20-Agosto%202020/Practicum%20II/Desarrollo%20del%20Proyecto/Menu/Yo_aprendo_EEC.htm">Menú</a>
+        </div>
+
+			</div>
+		</div>
+	</div>
+
+    <script src="Codigo.js">
+</body>
+</html>

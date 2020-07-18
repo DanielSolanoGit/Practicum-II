@@ -18,17 +18,15 @@
           var resp1;
           var resp2;
           var res_resta;
-          for(var i=0; i<10; i ++){
-            resp1 = Math.floor(Math.random()*(max - min +1)) + min;
-            resp2 = Math.floor(Math.random()*(max - min +1)) + min;
-            if(resp1 < resp2){
-              res_resta = resp2 - resp1;
-              document.write(i+1+".-   "+resp2 +"-"+ resp1 + "=" +res_resta+"</br>");
-            }else{
-              res_resta = resp1 - resp2;
-              document.write(i+1+".-   "+resp1 +"-"+ resp2 + "=" +res_resta+"</br>");
-            }
-          }
+					resp1 = Math.floor(Math.random()*(max - min +1)) + min;
+					resp2 = Math.floor(Math.random()*(max - min +1)) + min;
+					if(resp1 < resp2){
+						res_resta = resp2 - resp1;
+						document.write(resp2 +"<br>-<br>"+ resp1 + "=" +res_resta+"<br>");
+					}else{
+						res_resta = resp1 - resp2;
+						document.write(resp1 +"<br>-<br>"+ resp2 + "=" +res_resta+"<br>");
+					}
            </script>
         <div class="txtSuma">
           <input type = "text" id=respSuma </input>

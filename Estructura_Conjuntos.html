@@ -1,52 +1,113 @@
 <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+    body {
+    	background: #F3F5FA;
+        font-family: 'Open Sans', sans-serif;
+    	justify-content: center;
+    }
+            #container {
+        width: 780px;
+        height: 250px;
+        margin: 0 auto;
+        border: 1px solid black;
+        text-align: center;
+      }
+      .padre {
+        width: 780px;
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .tipo {
+       flex-grow: 1;
+      }
+      #fuego {
+       background-color: #ffd54c;
+      }
+      #agua {
+        background-color: #42ccff;
+      }
+      #azul {
+        background-color: #0000FF;
+      }
+      #resultado {
+        text-align: center;
+        font-size: 30px;
+      }
+      .minions {
+         margin: 10px;
+         height: 80px;
+         width: 80px;
+      }
+      .vl {
+            border-left: 3px solid green;
+            height: 550px;
+            position: absolute;
+            left: 20%;
+            margin-left: -3px;
+            top: 0;
+      }
+      .titulo {
+        line-height: 50pt;
+        padding: 20px 35px;
+        text-align: center;
 
-<html>
-       <head>
-       	    <meta charset="utf-8">
-            <title>Conjuntos </title>
-            <link  rel="stylesheet" type="Estilos/estiloGeneral" href="estilos1.css">
+      }
+      .subtitulo{
+  position:absolute;
+  top:50pt;
+  left:10pt;
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <div class="titulo">
+      <h1> Conjuntos</h1>
+    </div>
+    <div class="subtitulo">
+      <h2> Conjunto A = 2</h2>
+      <h2> Conjunto B = 3</h2>
+      <h2> Conjunto C = 1</h2>
+    </div>
+    <div class="vl">
+    </div>
+      <section id="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div class="padre">
+       <div class="tipo" id="fuego" ondrop="drop(event)" ondragover="allowDrop(event)">A</div>
+       <div class="tipo" id="agua" ondrop="drop(event)" ondragover="allowDrop(event)">B</div>
+       <div class="tipo" id="azul" ondrop="drop(event)" ondragover="allowDrop(event)">C</div>
+    </div>
+    <img class="minions" src="Imagenes/Minio1.png" draggable="true" ondragstart="drag(event)" id="drag1"/>
+    <img class="minions" src="Imagenes/Minio1.png" draggable="true" ondragstart="drag(event)" id="drag2"/>
+    <img class="minions" src="Imagenes/Minio2.png" draggable="true" ondragstart="drag(event)" id="drag3"/>
+    <img class="minions" src="Imagenes/Minio2.png" draggable="true" ondragstart="drag(event)" id="drag4"/>
+    <img class="minions" src="Imagenes/Minio3.png" draggable="true" ondragstart="drag(event)" id="drag5"/>
+    <img class="minions" src="Imagenes/Minio2.png" draggable="true" ondragstart="drag(event)" id="drag6"/>
 
-  <!--Declarar estilo para contenedor Div-->
-         <style type="text/css">
-          #div1{
-             width: 150px;
-             height: 300px;
-             padding: 10px;
-             border: 1px solid #000000;
-          }
-         </style>
+    </section>
+    <div id="resultado">...</div>
+    <script>
+          function drag(ev) {
+       ev.dataTransfer.setData("text", ev.target.id);
+      }
 
-  <!--Construir las funciones javascript-->
-       <script type="text/javascript">
+      function allowDrop(ev) {
+      ev.preventDefault();
+      }
 
-          function allowDrop(ev){
-            ev.preventDefault();
-          }
+      function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+      }
 
-          function drag(ev){
-            ev.dataTransfer.setData("Text",ev.target.id);
-          }
-
-          function drop(ev){
-           ev.preventDefault();
-           var datos=ev.dataTransfer.getData("Text");
-           ev.target.appendChild(document.getElementById(datos));
-
-          }
-       </script>
-
-       </head>
-   <body>
-          <h1>Conjuntos</h1>
-           <div id="div1" ondragover="allowDrop(event)" ondrop="drop(event)"></div><br>
-           <div id="div1" ondragover="allowDrop(event)" ondrop="drop(event)"></div><br>
-           <div id="div1" ondragover="allowDrop(event)" ondrop="drop(event)"></div><br>
-
-           <img id="imagen" src="Imagenes/Helado1.png" draggable="true" ondragstart="drag(event)">
-           <img id="imagen" src="Imagenes/Helado2.png" draggable="true" ondragstart="drag(event)">
-           <img id="imagen" src="Imagenes/Helado3.png" draggable="true" ondragstart="drag(event)">
-           <div>
-   					<br><a href="file:///D:/Documents/UTPL/Inform%C3%A1tica%20-%20Daniel/9%20Abril%202020%20-Agosto%202020/Practicum%20II/Desarrollo%20del%20Proyecto/Menu/Yo_aprendo_EEC.htm">Menú</a>
-   			</div>
-   </body>
+    </script>
+    <div>
+      <br><a href="file:///D:/Documents/UTPL/Inform%C3%A1tica%20-%20Daniel/9%20Abril%202020%20-Agosto%202020/Practicum%20II/Desarrollo%20del%20Proyecto/Menu/Yo_aprendo_EEC.htm">Menú</a>
+    </div>
+  </body>
 </html>

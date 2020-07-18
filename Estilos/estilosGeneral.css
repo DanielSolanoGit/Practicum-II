@@ -52,11 +52,6 @@ body {
 
 }
 
-
-/* ? Clases para los estilos en los diferentes estados del drag and drop */
-
-/* ? ------- */
-
 .lista .label {
 	text-transform: uppercase;
 	font-weight: 600;
